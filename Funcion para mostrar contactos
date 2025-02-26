@@ -1,1 +1,22 @@
+#include <stdio.h>
 
+#define MAX_CONTACTOS 100
+
+typedef struct {
+    char nombre[50];
+    char telefono[15];
+    char email[50];
+} Contacto;
+
+void mostrarContactos(Contacto contactos[], int cantidad) {
+    if (cantidad == 0) {
+        printf("No hay contactos para mostrar.\n");
+        return;
+    }
+
+    printf("Lista de contactos:\n");
+    for (int i = 0; i < cantidad; i++) {
+        printf("%d. Nombre: %s\n   Teléfono: %s\n   Email: %s\n", 
+               i + 1, contactos[i].nombre, contactos[i].telefono, contactos[i].email);
+    }
+}

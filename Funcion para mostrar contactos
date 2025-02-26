@@ -5,7 +5,7 @@
 typedef struct {
     char nombre[50];
     char telefono[15];
-    char email[50];
+    char correo[50];
 } Contacto;
 
 void mostrarContactos(Contacto contactos[], int cantidad) {
@@ -16,7 +16,7 @@ void mostrarContactos(Contacto contactos[], int cantidad) {
 
     printf("Lista de contactos:\n");
     for (int i = 0; i < cantidad; i++) {
-        printf("%d. Nombre: %s\n   Teléfono: %s\n   Email: %s\n", 
-               i + 1, contactos[i].nombre, contactos[i].telefono, contactos[i].email);
+        printf("%d. Nombre: %s\n   Teléfono: %s\n   correo: %s\n", 
+               i + 1, contactos[i].nombre, contactos[i].telefono, contactos[i].correo);
     }
 }

@@ -1,0 +1,20 @@
+void cargarContactos(struct Contacto contactos[], int *num_contactos);
+
+void cargarContactos(struct Contacto contactos[], int *num_contactos) {
+    FILE *archivo = fopen("contactos.txt", "r");
+    if (!archivo) {
+        printf("No se encontró el archivo de contactos.\n");
+        return;
+    }
+
+    *num_contactos = 0;
+    while (fscanf(archivo, "%s %s %s",
+                  contactos[*num_contactos].nombre,
+                  contactos[*num_contactos].telefono,
+                  contactos[*num_contactos].email) == 3) {
+        (*num_contactos)++;
+    }
+
+    fclose(archivo);
+    printf("%d contactos cargados desde 'contactos.txt'.\n", *num_contactos);
+}
